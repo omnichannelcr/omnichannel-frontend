@@ -7,10 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=web\"",
-    "build": "npm run build --workspace=backend && npm run build --workspace=web",
-    "start": "concurrently \"npm run start --workspace=backend\" \"npm run start --workspace=web\"",
-    "lint": "npm run lint --workspace=backend && npm run lint --workspace=web",
+    "dev": "concurrently \"npm run dev --workspace=@omnichannel/backend\" \"npm run dev --workspace=web\"",
+    "build": "npm run build --workspace=@omnichannel/backend && npm run build --workspace=web",
+    "start": "concurrently \"npm run start --workspace=@omnichannel/backend\" \"npm run start --workspace=web\"",
+    "lint": "npm run lint --workspace=@omnichannel/backend && npm run lint --workspace=web",
     "docker:build": "docker-compose build",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
@@ -18,9 +18,9 @@
     "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
     "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
     "docker:clean": "docker-compose down -v && docker system prune -f",
-    "db:migrate": "npm run db:migrate --workspace=backend",
-    "db:seed": "npm run db:seed --workspace=backend",
-    "db:reset": "npm run db:reset --workspace=backend"
+    "db:migrate": "npm run db:migrate --workspace=@omnichannel/backend",
+    "db:seed": "npm run db:seed --workspace=@omnichannel/backend",
+    "db:reset": "npm run db:reset --workspace=@omnichannel/backend"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database - Development
+  database:
+    image: postgres:15-alpine
+    container_name: omnichannel-database-dev
+    environment:
+      POSTGRES_DB: omnichannel_dev
+      POSTGRES_USER: omnichannel_user
+      POSTGRES_PASSWORD: omnichannel_password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5433:5432"  # Different port for dev to avoid conflicts
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+      - ./packages/backend/database/init:/docker-entrypoint-initdb.d
+    networks:
+      - omnichannel-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U omnichannel_user -d omnichannel_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API Service - Development
+  backend:
+    build:
+      context: ./packages/backend
+      dockerfile: Dockerfile.dev
+    container_name: omnichannel-backend-dev
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - FRONTEND_URL=http://localhost:3000
+      - DATABASE_URL=postgresql://omnichannel_user:omnichannel_password@database:5432/omnichannel_dev
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=omnichannel_dev
+      - DB_USER=omnichannel_user
+      - DB_PASSWORD=omnichannel_password
+    env_file:
+      - ./packages/backend/.env
+    volumes:
+      - ./packages/backend:/app
+      - /app/node_modules
+      - ./packages/backend/logs:/app/logs
+    networks:
+      - omnichannel-network
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+    command: npm run dev
+
+  # Frontend Web Service - Development
+  web:
+    build:
+      context: ./packages/web
+      dockerfile: Dockerfile.dev
+    container_name: omnichannel-web-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    volumes:
+      - ./packages/web:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - omnichannel-network
+    restart: unless-stopped
+    command: npm run dev
+
+networks:
+  omnichannel-network:
+    driver: bridge
+
+volumes:
+  postgres_dev_data:
+    driver: local

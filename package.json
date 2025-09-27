@@ -1,0 +1,31 @@
+{
+  "name": "omnichannel",
+  "version": "1.0.0",
+  "description": "Omnichannel application with backend and frontend",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=web\"",
+    "build": "npm run build --workspace=backend && npm run build --workspace=web",
+    "start": "concurrently \"npm run start --workspace=backend\" \"npm run start --workspace=web\"",
+    "lint": "npm run lint --workspace=backend && npm run lint --workspace=web",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:clean": "docker-compose down -v && docker system prune -f",
+    "db:migrate": "npm run db:migrate --workspace=backend",
+    "db:seed": "npm run db:seed --workspace=backend",
+    "db:reset": "npm run db:reset --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

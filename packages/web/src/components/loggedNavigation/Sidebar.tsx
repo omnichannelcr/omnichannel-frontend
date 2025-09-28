@@ -5,6 +5,9 @@ import { NavItem, UserProfile } from '@/types/navigation';
 import { navigationItems, bottomNavItems } from '@/data/navigation';
 import { getIcon } from '../icons';
 import Link from 'next/link';
+import LanguageSwitcher from '../LanguageSwitcher';
+import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface SidebarProps {
   user: UserProfile;
@@ -20,6 +23,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   className = '' 
 }) => {
   const [expandedItems, setExpandedItems] = useState<string[]>(['customers']);
+  const pathname = usePathname();
+  const t = useTranslations();
 
   const toggleExpanded = (itemId: string) => {
     setExpandedItems(prev => 
@@ -32,8 +37,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   const renderNavItem = (item: NavItem, level = 0) => {
     const hasChildren = item.children && item.children.length > 0;
     const isExpanded = expandedItems.includes(item.id);
-    const isActive = item.href === window.location.pathname;
-    const isParentActive = hasChildren && item.children?.some(child => child.href === window.location.pathname);
+    const isActive = item.href === pathname;
+    const isParentActive = hasChildren && item.children?.some(child => child.href === pathname);
 
     const handleClick = () => {
       if (hasChildren) {
@@ -49,16 +54,16 @@ const Sidebar: React.FC<SidebarProps> = ({
           className={`
             flex items-center transition-all duration-200 group relative
             ${level > 0 ? 'ml-6' : ''}
-            ${isActive || isParentActive 
-              ? 'bg-blue-600 text-white' 
-              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-            }
             ${isCollapsed ? 'justify-center px-3 py-3 rounded-lg' : 'gap-3 px-4 py-3 rounded-lg'}
+              ${isActive || isParentActive 
+                ? 'bg-primary-500 text-white shadow-sm border-l-4 border-primary-400' 
+                : 'text-neutral-700 hover:bg-neutral-100'
+              }
           `}
         >
           <div className="flex-shrink-0">
-            {getIcon(item.icon, `w-5 h-5 ${isActive || isParentActive ? 'text-white' : 'text-gray-600 dark:text-gray-400'}`) || (
-              <div className={`w-5 h-5 ${isActive || isParentActive ? 'text-white' : 'text-gray-600 dark:text-gray-400'}`}>
+            {getIcon(item.icon, `w-5 h-5 ${isActive || isParentActive ? 'text-white' : ''}`) || (
+              <div className={`w-5 h-5 ${isActive || isParentActive ? 'text-white' : 'text-neutral-500'}`}>
                 {item.icon}
               </div>
             )}
@@ -66,12 +71,12 @@ const Sidebar: React.FC<SidebarProps> = ({
           
           {!isCollapsed && (
             <>
-              <span className={`font-medium ${isActive || isParentActive ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`}>
-                {item.label}
+              <span className={`font-medium ${isActive || isParentActive ? 'text-white' : 'text-neutral-700'}`}>
+                {t(`navigation.${item.label}`)}
               </span>
               {hasChildren && (
                 <div className="ml-auto">
-                  {getIcon('chevron-up', `w-4 h-4 transform transition-transform ${isExpanded ? 'rotate-0' : 'rotate-180'} ${isActive || isParentActive ? 'text-white' : 'text-gray-400'}`)}
+                  {getIcon('chevron-up', `w-4 h-4 transform transition-transform ${isExpanded ? 'rotate-0' : 'rotate-180'} ${isActive || isParentActive ? 'text-white' : 'text-neutral-400'}`)}
                 </div>
               )}
             </>
@@ -89,36 +94,40 @@ const Sidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <div className={`
-      flex flex-col h-full bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300
-      ${isCollapsed ? 'w-24' : 'w-64'}
-      ${className}
-    `}>
+    <div 
+      className={`
+        flex flex-col h-full transition-all duration-300
+        bg-white border-r border-neutral-200        ${isCollapsed ? 'w-24' : 'w-64'}
+        ${className}
+      `}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="flex items-center justify-between p-4 border-b border-neutral-200">
         {!isCollapsed && (
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
               {getIcon('hash', 'w-5 h-5 text-white')}
             </div>
-            <span className="font-semibold text-gray-900 dark:text-white">Omnichannel</span>
+            <span className="font-semibold text-neutral-900">
+              Omnichannel
+            </span>
           </div>
         )}
         
         {isCollapsed && (
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto">
+          <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center mx-auto">
             {getIcon('hash', 'w-5 h-5 text-white')}
           </div>
         )}
 
         {onToggle && (
-          <button
-            onClick={onToggle}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-          >
+        <button 
+          onClick={onToggle}
+          className="p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+        >
             {isCollapsed 
-              ? getIcon('chevron-right', 'w-5 h-5 text-gray-600 dark:text-gray-400')
-              : getIcon('chevron-left', 'w-5 h-5 text-gray-600 dark:text-gray-400')
+              ? getIcon('chevron-right', 'w-5 h-5 text-neutral-600')
+              : getIcon('chevron-left', 'w-5 h-5 text-neutral-600')
             }
           </button>
         )}
@@ -129,13 +138,18 @@ const Sidebar: React.FC<SidebarProps> = ({
         {navigationItems.map(item => renderNavItem(item))}
       </nav>
 
+      {/* Language Switcher */}
+      <div className="p-4 border-t border-neutral-200">
+        <LanguageSwitcher />
+      </div>
+
       {/* Bottom Navigation */}
-      <div className="p-4 border-t border-gray-200 dark:border-gray-700 space-y-2">
+      <div className="p-4 border-t border-neutral-200 space-y-2">
         {bottomNavItems.map(item => renderNavItem(item))}
       </div>
 
       {/* User Profile */}
-      <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="p-4 border-t border-neutral-200">
         {isCollapsed ? (
           <div className="flex justify-center">
             <img
@@ -152,15 +166,15 @@ const Sidebar: React.FC<SidebarProps> = ({
               className="w-10 h-10 rounded-full object-cover"
             />
             <div className="flex-1 min-w-0">
-              <p className="font-semibold text-gray-900 dark:text-white truncate">
+              <p className="font-semibold text-neutral-900 truncate">
                 {user.name}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
+              <p className="text-sm text-neutral-500 truncate">
                 {user.email}
               </p>
             </div>
-            <button className="p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-              {getIcon('more-vertical', 'w-4 h-4 text-gray-600 dark:text-gray-400')}
+            <button className="p-1 rounded-lg hover:bg-neutral-100 transition-colors">
+              {getIcon('more-vertical', 'w-4 h-4 text-neutral-600')}
             </button>
           </div>
         )}

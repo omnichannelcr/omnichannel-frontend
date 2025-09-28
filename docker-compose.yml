@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # PostgreSQL Database
   database:
@@ -13,7 +11,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql/data
       - ./packages/backend/database/init:/docker-entrypoint-initdb.d
     networks:
       - omnichannel-network
@@ -89,7 +87,5 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data:
-    driver: local
   backend-logs:
     driver: local

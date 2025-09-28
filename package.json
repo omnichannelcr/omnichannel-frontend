@@ -20,7 +20,13 @@
     "docker:clean": "docker-compose down -v && docker system prune -f",
     "db:migrate": "npm run db:migrate --workspace=@omnichannel/backend",
     "db:seed": "npm run db:seed --workspace=@omnichannel/backend",
-    "db:reset": "npm run db:reset --workspace=@omnichannel/backend"
+    "db:reset": "npm run db:reset --workspace=@omnichannel/backend",
+    "db:install": "node scripts/db.js install",
+    "db:start": "node scripts/db.js start",
+    "db:stop": "node scripts/db.js stop",
+    "db:restart": "node scripts/db.js restart",
+    "db:status": "node scripts/db.js status",
+    "db:logs": "node scripts/db.js logs"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

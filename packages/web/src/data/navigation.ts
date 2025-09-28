@@ -3,33 +3,32 @@ import { NavItem } from '@/types/navigation';
 export const navigationItems: NavItem[] = [
   {
     id: 'dashboard',
-    label: 'Dashboard',
+    label: 'dashboard',
     icon: 'grid',
-    href: '/dashboard'
+    href: '/'
   },
   {
     id: 'customers',
-    label: 'Customers',
+    label: 'customers',
     icon: 'users',
     href: '/customers',
-    active: true,
     // children: [
     //   {
     //     id: 'badges',
-    //     label: 'Badges',
+    //     label: 'badges',
     //     icon: 'badge',
     //     href: '/customers/badges',
     //     active: true
     //   },
     //   {
     //     id: 'logs',
-    //     label: 'Customers Logs',
+    //     label: 'logs',
     //     icon: 'file-text',
     //     href: '/customers/logs'
     //   },
     //   {
     //     id: 'vouchers',
-    //     label: 'Gift Vouchers',
+    //     label: 'vouchers',
     //     icon: 'gift',
     //     href: '/customers/vouchers'
     //   }
@@ -37,29 +36,34 @@ export const navigationItems: NavItem[] = [
   },
   {
     id: 'leads',
-    label: 'Leads',
+    label: 'leads',
     icon: 'folder',
     href: '/leads'
   },
   {
-    id: 'Integrations',
-    label: 'Integrations',
+    id: 'pipeline',
+    label: 'pipeline',
+    icon: 'bar-chart',
+    href: '/pipeline'
+  },
+  {
+    id: 'integrations',
+    label: 'integrations',
     icon: 'wallet',
     href: '/integrations'
   },
-
 ];
 
 export const bottomNavItems: NavItem[] = [
   {
     id: 'settings',
-    label: 'Settings',
+    label: 'settings',
     icon: 'settings',
     href: '/settings'
   },
   {
     id: 'logout',
-    label: 'Logout',
+    label: 'logout',
     icon: 'log-out',
     href: '/logout'
   }

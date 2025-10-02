@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import { mockChats } from '@/data/leads';
 import { Chat } from '@/types/leads';
-import ChatList from '@/components/leads/ChatList';
-import MobileChatView from '@/components/leads/MobileChatView';
-import DesktopChatView from '@/components/leads/DesktopChatView';
+import { ChatList, MobileChatView, DesktopChatView } from '@/components';
 import { useTranslations } from 'next-intl';
 
 export default function LeadsPage() {

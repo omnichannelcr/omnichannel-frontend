@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Chat } from '@/types/leads';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 import { useTranslations } from 'next-intl';
 
 interface MobileChatViewProps {
@@ -10,7 +11,7 @@ interface MobileChatViewProps {
   onBack: () => void;
 }
 
-export default function MobileChatView({ chat, onBack }: MobileChatViewProps) {
+export function MobileChatView({ chat, onBack }: MobileChatViewProps) {
   const [messageInput, setMessageInput] = useState('');
   const [showContactInfo, setShowContactInfo] = useState(false);
   const t = useTranslations();
@@ -103,9 +104,11 @@ export default function MobileChatView({ chat, onBack }: MobileChatViewProps) {
             {/* Avatar and Name */}
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <img
+                <Image
                   src={chat.lead.avatar}
                   alt={chat.lead.name}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 {/* Online indicator */}
@@ -186,9 +189,11 @@ export default function MobileChatView({ chat, onBack }: MobileChatViewProps) {
                 <div className={`flex max-w-xs lg:max-w-md ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end space-x-2`}>
                   {/* Avatar (only for lead messages) */}
                   {!isUser && (
-                    <img
+                    <Image
                       src={chat.lead.avatar}
                       alt={chat.lead.name}
+                      width={24}
+                      height={24}
                       className="w-6 h-6 rounded-full object-cover flex-shrink-0"
                     />
                   )}

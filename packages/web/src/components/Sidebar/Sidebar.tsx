@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { NavItem, UserProfile } from '@/types/navigation';
 import { navigationItems, bottomNavItems } from '@/data/loggedNavigation';
-import { getIcon } from '../icons';
+import { getIcon, LanguageSwitcher } from '@/components';
 import Link from 'next/link';
-import LanguageSwitcher from '../LanguageSwitcher';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -16,7 +16,7 @@ interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ 
+export const Sidebar: React.FC<SidebarProps> = ({ 
   user, 
   isCollapsed = false, 
   onToggle,
@@ -152,17 +152,21 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="p-4 border-t border-neutral-200">
         {isCollapsed ? (
           <div className="flex justify-center">
-            <img
+            <Image
               src={user.avatar}
               alt={user.name}
+              width={40}
+              height={40}
               className="w-10 h-10 rounded-full object-cover"
             />
           </div>
         ) : (
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src={user.avatar}
               alt={user.name}
+              width={40}
+              height={40}
               className="w-10 h-10 rounded-full object-cover"
             />
             <div className="flex-1 min-w-0">
@@ -183,5 +187,4 @@ const Sidebar: React.FC<SidebarProps> = ({
   );
 };
 
-export default Sidebar;
 

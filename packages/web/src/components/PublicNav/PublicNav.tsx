@@ -3,11 +3,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { getIcon } from '../icons';
+import { getIcon, LanguageSwitcher } from '@/components';
 import { publicNavigationItems, authItems } from '@/data/publicNavigation';
-import LanguageSwitcher from '../LanguageSwitcher';
 
-const PublicNav: React.FC = () => {
+export const PublicNav: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations();
 
@@ -37,7 +36,7 @@ const PublicNav: React.FC = () => {
                 href={item.href} 
                 className="text-gray-600 hover:text-gray-900 transition-colors"
               >
-                {t(item.labelKey as any)}
+                {t(item.labelKey)}
               </Link>
             ))}
           </div>
@@ -49,13 +48,13 @@ const PublicNav: React.FC = () => {
               href={authItems.login.href}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {t(authItems.login.labelKey as any)}
+              {t(authItems.login.labelKey)}
             </Link>
             <Link
               href={authItems.signup.href}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-sm hover:shadow-md"
             >
-              {t(authItems.signup.labelKey as any)}
+              {t(authItems.signup.labelKey)}
             </Link>
           </div>
 
@@ -81,7 +80,7 @@ const PublicNav: React.FC = () => {
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {t(item.labelKey as any)}
+                  {t(item.labelKey)}
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
@@ -93,14 +92,14 @@ const PublicNav: React.FC = () => {
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {t(authItems.login.labelKey as any)}
+                  {t(authItems.login.labelKey)}
                 </Link>
                 <Link
                   href={authItems.signup.href}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-sm hover:shadow-md text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {t(authItems.signup.labelKey as any)}
+                  {t(authItems.signup.labelKey)}
                 </Link>
               </div>
             </div>
@@ -111,4 +110,3 @@ const PublicNav: React.FC = () => {
   );
 };
 
-export default PublicNav;

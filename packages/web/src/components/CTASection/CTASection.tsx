@@ -1,9 +1,7 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-const CTASection: React.FC = () => {
+export const CTASection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
@@ -26,4 +24,3 @@ const CTASection: React.FC = () => {
   );
 };
 
-export default CTASection;

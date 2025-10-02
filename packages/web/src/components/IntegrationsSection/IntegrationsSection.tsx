@@ -1,9 +1,8 @@
-'use client';
-
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { homeIntegrations } from '@/data/homeIntegrations';
 
-const IntegrationsSection: React.FC = () => {
+export const IntegrationsSection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
@@ -22,7 +21,7 @@ const IntegrationsSection: React.FC = () => {
           {homeIntegrations.map((integration, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 text-center">
               <div className="flex items-center justify-center mx-auto mb-4">
-                <img src={integration.icon} alt={integration.name} className="w-12 h-12" />
+                <Image src={integration.icon} alt={integration.name} width={48} height={48} className="w-12 h-12" />
               </div>
               <h3 className="font-semibold text-gray-900">{integration.name}</h3>
             </div>
@@ -33,4 +32,3 @@ const IntegrationsSection: React.FC = () => {
   );
 };
 
-export default IntegrationsSection;

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { 
   createPipelineStages,
@@ -9,7 +10,7 @@ import {
   getActiveLeadsCount 
 } from '@/data/pipeline';
 import { PipelineLead, PipelineStage } from '@/types/pipeline';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 import Link from 'next/link';
 import {
   DndContext,
@@ -161,9 +162,11 @@ const LeadCardContent = ({ lead }: { lead: PipelineLead }) => {
       <div className="flex items-start justify-between mb-2">
         <div className="flex items-center space-x-2">
           {lead.avatar ? (
-            <img 
+            <Image 
               src={lead.avatar} 
               alt={lead.name}
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full"
             />
           ) : (
@@ -219,9 +222,11 @@ const LeadCardContent = ({ lead }: { lead: PipelineLead }) => {
         {lead.assignedTo && (
           <div className="flex items-center space-x-2">
             {lead.assignedTo.avatar ? (
-              <img 
+              <Image 
                 src={lead.assignedTo.avatar} 
                 alt={lead.assignedTo.name}
+                width={16}
+                height={16}
                 className="w-4 h-4 rounded-full"
               />
             ) : (
@@ -354,9 +359,11 @@ const LeadDetailModal = ({
           {/* Basic Info */}
           <div className="flex items-start space-x-4">
             {lead.avatar ? (
-              <img 
+              <Image 
                 src={lead.avatar} 
                 alt={lead.name}
+                width={64}
+                height={64}
                 className="w-16 h-16 rounded-full"
               />
             ) : (
@@ -476,18 +483,10 @@ const LeadDetailModal = ({
 // Main Pipeline Page Component
 export default function PipelinePage() {
   const t = useTranslations('pipeline');
-  const tCommon = useTranslations('common');
-  const tStatus = useTranslations('status');
-  const tSources = useTranslations('sources');
   
   const [selectedLead, setSelectedLead] = useState<PipelineLead | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedFilters, setSelectedFilters] = useState({
-    source: '',
-    priority: '',
-    assignedTo: ''
-  });
   const [stages, setStages] = useState(() => createPipelineStages(t));
   const [activeId, setActiveId] = useState<string | null>(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -515,7 +514,7 @@ export default function PipelinePage() {
     setActiveId(event.active.id as string);
   };
 
-  const handleDragOver = (event: DragOverEvent) => {
+  const handleDragOver = () => {
     // This provides real-time feedback during drag
     // The visual feedback is handled by the DroppableStage component
   };
@@ -574,7 +573,7 @@ export default function PipelinePage() {
     }
 
     // Update the lead's status
-    const updatedLead = { ...lead, status: targetStageId as any };
+    const updatedLead = { ...lead, status: targetStageId as PipelineLead['status'] };
     console.log('Updated lead:', updatedLead);
 
     // Update stages
@@ -637,10 +636,10 @@ export default function PipelinePage() {
               </p>
             </div>
             <div className="flex items-center space-x-3">
-              <Link 
-                href="/pipeline/analytics"
-                className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
-              >
+                <Link 
+                  href="/dashboard/pipeline/analytics"
+                  className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+                >
                 {getIcon('bar-chart', 'w-4 h-4', 16)}
                 <span>{t('analytics')}</span>
               </Link>

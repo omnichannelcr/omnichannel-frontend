@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import Layout from "@/components/loggedNavigation/Layout";
+import { Layout } from "@/components";
 import { UserProfile } from "@/types/navigation";
 
 // Sample user data - in a real app, this would come from authentication

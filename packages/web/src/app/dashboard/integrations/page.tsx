@@ -1,8 +1,10 @@
-'use client';
-
-import { IntegrationCard } from '@/components/integrations/IntegrationCard';
+import { IntegrationCard } from '@/components';
 import { integrations } from '@/data/integrations';
 import { useTranslations } from 'next-intl';
+
+// This makes the page static
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
 export default function IntegrationsPage() {
   const t = useTranslations('integrations');

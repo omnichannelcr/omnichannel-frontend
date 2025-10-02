@@ -1,16 +1,14 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 import { homeFeatures } from '@/data/features';
 
-const FeaturesSection: React.FC = () => {
+export const FeaturesSection: React.FC = () => {
   const t = useTranslations('home');
 
   const features = homeFeatures.map(feature => ({
     icon: feature.icon,
-    title: t(feature.titleKey as any),
-    description: t(feature.descriptionKey as any)
+    title: t(feature.titleKey),
+    description: t(feature.descriptionKey)
   }));
 
   return (
@@ -45,4 +43,3 @@ const FeaturesSection: React.FC = () => {
   );
 };
 
-export default FeaturesSection;

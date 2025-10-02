@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 
 const languages = [
   { code: 'es', name: 'Español' },
@@ -10,7 +10,7 @@ const languages = [
   { code: 'fr', name: 'Français' },
 ];
 
-export default function LanguageSwitcher() {
+export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
 

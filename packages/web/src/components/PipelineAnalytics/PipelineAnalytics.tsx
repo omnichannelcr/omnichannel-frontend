@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { pipelineMetrics } from '@/data/pipeline';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 
 interface AnalyticsCardProps {
   title: string;
@@ -63,10 +63,9 @@ interface ChartData {
   color: string;
 }
 
-const PipelineAnalytics = () => {
+export const PipelineAnalytics = () => {
   const t = useTranslations('pipeline.analyticsPage');
   const [selectedPeriod, setSelectedPeriod] = useState('30d');
-  const [selectedMetric, setSelectedMetric] = useState('conversion');
 
   // Mock chart data
   const conversionData: ChartData[] = [
@@ -159,7 +158,7 @@ const PipelineAnalytics = () => {
           
           <div className="space-y-4">
             {conversionData.map((item, index) => (
-              <div key={item.name} className="flex items-center justify-between">
+              <div key={`conversion-${item.name}-${index}`} className="flex items-center justify-between" >
                 <div className="flex items-center space-x-3">
                   <div 
                     className="w-4 h-4 rounded-full" 
@@ -195,7 +194,7 @@ const PipelineAnalytics = () => {
           
           <div className="space-y-4">
             {sourceData.map((item, index) => (
-              <div key={item.name} className="flex items-center justify-between">
+              <div key={`source-${item.name}-${index}`} className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div 
                     className="w-4 h-4 rounded-full" 
@@ -232,7 +231,7 @@ const PipelineAnalytics = () => {
         
         <div className="grid grid-cols-4 gap-4">
           {weeklyTrendData.map((week, index) => (
-            <div key={week.week} className="text-center">
+            <div key={`week-${week.week}-${index}`} className="text-center">
               <div className="bg-gray-50 rounded-lg p-4">
                 <p className="text-sm font-medium text-gray-600 mb-2">{week.week}</p>
                 <div className="space-y-2">
@@ -296,4 +295,3 @@ const PipelineAnalytics = () => {
   );
 };
 
-export default PipelineAnalytics;

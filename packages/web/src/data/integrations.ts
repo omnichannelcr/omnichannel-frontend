@@ -1,11 +1,9 @@
-import { FaFacebook, FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";  
 import { Integration } from "@/types/integrations";
 
 export const integrations: Integration[] = [
   {
     id: 'whatsapp',
     name: 'WhatsApp Business',
-    icon: FaWhatsapp,
     image: '/icons/whatsapp.svg',
     description: 'Connect your WhatsApp Business account',
     status: 'disconnected',
@@ -15,7 +13,6 @@ export const integrations: Integration[] = [
   {
     id: 'instagram',
     name: 'Instagram',
-    icon: FaInstagram,
     image: '/icons/instagram.svg',
     description: 'Manage Instagram direct messages',
     status: 'disconnected',
@@ -25,7 +22,6 @@ export const integrations: Integration[] = [
   {
     id: 'facebook',
     name: 'Facebook',
-    icon: FaFacebook,
     image: '/icons/facebook.svg',
     description: 'Connect Facebook Messenger',
     status: 'disconnected',
@@ -35,7 +31,6 @@ export const integrations: Integration[] = [
   {
     id: 'telegram',
     name: 'Telegram',
-    icon: FaTelegram,
     image: '/icons/telegram.svg',
     description: 'Integrate Telegram bot',
     status: 'disconnected',

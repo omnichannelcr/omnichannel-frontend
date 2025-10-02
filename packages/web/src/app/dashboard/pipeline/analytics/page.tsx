@@ -1,7 +1,7 @@
 'use client';
 
-import PipelineAnalytics from '@/components/pipeline/PipelineAnalytics';
-import { getIcon } from '@/components/icons';
+import { PipelineAnalytics } from '@/components';
+import { getIcon } from '@/components';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -13,7 +13,7 @@ export default function PipelineAnalyticsPage() {
       <div className="mb-6">
         <div className="flex items-center space-x-4 mb-4">
           <Link 
-            href="/pipeline"
+            href="/dashboard/pipeline"
             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900"
           >
             {getIcon('chevron-left', 'w-4 h-4', 16)}

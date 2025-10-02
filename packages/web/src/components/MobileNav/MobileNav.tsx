@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { NavItem, UserProfile } from '@/types/navigation';
 import { navigationItems, bottomNavItems } from '@/data/loggedNavigation';
-import { getIcon } from '../icons';
+import { getIcon } from '@/components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -14,7 +15,7 @@ interface MobileNavProps {
   onClose: () => void;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ user, isOpen, onClose }) => {
+export const MobileNav: React.FC<MobileNavProps> = ({ user, isOpen, onClose }) => {
   const [expandedItems, setExpandedItems] = useState<string[]>(['customers']);
   const pathname = usePathname();
   const t = useTranslations();
@@ -123,9 +124,11 @@ const MobileNav: React.FC<MobileNavProps> = ({ user, isOpen, onClose }) => {
           {/* User Profile */}
           <div className="p-4 border-t border-neutral-200">
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 src={user.avatar}
                 alt={user.name}
+                width={40}
+                height={40}
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div className="flex-1 min-w-0">
@@ -147,5 +150,4 @@ const MobileNav: React.FC<MobileNavProps> = ({ user, isOpen, onClose }) => {
   );
 };
 
-export default MobileNav;
 

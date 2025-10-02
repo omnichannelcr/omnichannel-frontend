@@ -1,10 +1,14 @@
-'use client';
+import { 
+  PublicLayout, 
+  HeroSection, 
+  FeaturesSection, 
+  IntegrationsSection, 
+  CTASection 
+} from '@/components';
 
-import PublicLayout from '@/components/publicNavigation/PublicLayout';
-import HeroSection from '@/components/home/HeroSection';
-import FeaturesSection from '@/components/home/FeaturesSection';
-import IntegrationsSection from '@/components/home/IntegrationsSection';
-import CTASection from '@/components/home/CTASection';
+// This makes the page static
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
 export default function Home() {
   return (

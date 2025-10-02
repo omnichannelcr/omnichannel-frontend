@@ -1,6 +1,8 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
+
+// This makes the page static
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
 export default function CustomersPage() {
   const t = useTranslations('customers');

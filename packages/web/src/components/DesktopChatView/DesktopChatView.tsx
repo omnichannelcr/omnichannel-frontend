@@ -1,15 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Chat } from '@/types/leads';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 import { useTranslations } from 'next-intl';
 
 interface DesktopChatViewProps {
   chat: Chat;
 }
 
-export default function DesktopChatView({ chat }: DesktopChatViewProps) {
+export function DesktopChatView({ chat }: DesktopChatViewProps) {
   const [messageInput, setMessageInput] = useState('');
   const t = useTranslations();
 
@@ -90,9 +91,11 @@ export default function DesktopChatView({ chat }: DesktopChatViewProps) {
       <div className="flex items-center justify-between p-4 border-b border-neutral-200 bg-neutral-50">
         <div className="flex items-center space-x-3">
           <div className="relative">
-            <img
+            <Image
               src={chat.lead.avatar}
               alt={chat.lead.name}
+              width={40}
+              height={40}
               className="w-10 h-10 rounded-full object-cover"
             />
             {/* Online indicator */}
@@ -148,9 +151,11 @@ export default function DesktopChatView({ chat }: DesktopChatViewProps) {
                 <div className={`flex max-w-xs lg:max-w-md ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end space-x-2`}>
                   {/* Avatar (only for lead messages) */}
                   {!isUser && (
-                    <img
+                    <Image
                       src={chat.lead.avatar}
                       alt={chat.lead.name}
+                      width={24}
+                      height={24}
                       className="w-6 h-6 rounded-full object-cover flex-shrink-0"
                     />
                   )}

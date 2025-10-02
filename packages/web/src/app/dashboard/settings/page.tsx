@@ -1,3 +1,7 @@
+// This makes the page static
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
+
 export default function SettingsPage() {
   return (
     <div className="p-6">

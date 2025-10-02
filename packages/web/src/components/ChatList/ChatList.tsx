@@ -1,7 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { Chat } from '@/types/leads';
-import { getIcon } from '@/components/icons';
+import { getIcon } from '@/components';
 import { useTranslations } from 'next-intl';
 
 interface ChatListProps {
@@ -10,7 +11,7 @@ interface ChatListProps {
   onSelectChat: (chat: Chat) => void;
 }
 
-export default function ChatList({ chats, selectedChat, onSelectChat }: ChatListProps) {
+export function ChatList({ chats, selectedChat, onSelectChat }: ChatListProps) {
   const t = useTranslations();
   const formatTime = (date: Date) => {
     const now = new Date();
@@ -105,9 +106,11 @@ export default function ChatList({ chats, selectedChat, onSelectChat }: ChatList
                   <div className="flex items-start space-x-3">
                     {/* Avatar */}
                     <div className="relative">
-                      <img
+                      <Image
                         src={chat.lead.avatar}
                         alt={chat.lead.name}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 rounded-full object-cover"
                       />
                       {/* Source indicator */}

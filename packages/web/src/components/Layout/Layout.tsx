@@ -2,16 +2,15 @@
 
 import React, { useState } from 'react';
 import { UserProfile } from '@/types/navigation';
-import Sidebar from './Sidebar';
-import MobileNav from './MobileNav';
-import { getIcon } from '../icons';
+import { Sidebar, MobileNav } from '@/components';
+import { getIcon } from '@/components';
 
 interface LayoutProps {
   children: React.ReactNode;
   user: UserProfile;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, user }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, user }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -66,5 +65,4 @@ const Layout: React.FC<LayoutProps> = ({ children, user }) => {
   );
 };
 
-export default Layout;
 

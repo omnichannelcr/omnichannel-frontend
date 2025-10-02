@@ -1,9 +1,7 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-const HeroSection: React.FC = () => {
+export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
@@ -36,4 +34,3 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection;

@@ -5,13 +5,13 @@ export const navigationItems: NavItem[] = [
     id: 'dashboard',
     label: 'dashboard',
     icon: 'grid',
-    href: '/'
+    href: '/dashboard'
   },
   {
     id: 'customers',
     label: 'customers',
     icon: 'users',
-    href: '/customers',
+    href: '/dashboard/customers',
     // children: [
     //   {
     //     id: 'badges',
@@ -38,19 +38,19 @@ export const navigationItems: NavItem[] = [
     id: 'leads',
     label: 'leads',
     icon: 'folder',
-    href: '/leads'
+    href: '/dashboard/leads'
   },
   {
     id: 'pipeline',
     label: 'pipeline',
     icon: 'bar-chart',
-    href: '/pipeline'
+    href: '/dashboard/pipeline'
   },
   {
     id: 'integrations',
     label: 'integrations',
     icon: 'wallet',
-    href: '/integrations'
+    href: '/dashboard/integrations'
   },
 ];
 
@@ -59,7 +59,7 @@ export const bottomNavItems: NavItem[] = [
     id: 'settings',
     label: 'settings',
     icon: 'settings',
-    href: '/settings'
+    href: '/dashboard/settings'
   },
   {
     id: 'logout',

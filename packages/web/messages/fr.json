@@ -8,6 +8,83 @@
     "settings": "Paramètres",
     "logout": "Déconnexion"
   },
+  "publicNavigation": {
+    "features": "Fonctionnalités",
+    "integrations": "Intégrations",
+    "pricing": "Tarifs",
+    "about": "À Propos",
+    "login": "Connexion",
+    "getStarted": "Commencer"
+  },
+  "auth": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "subtitle": "Ou",
+      "createAccount": "créez un nouveau compte",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "signIn": "Se connecter",
+      "orContinueWith": "Ou continuez avec",
+      "signInWithGoogle": "Se connecter avec Google"
+    },
+    "signup": {
+      "title": "Créez votre compte",
+      "subtitle": "Ou",
+      "signInExisting": "connectez-vous à votre compte existant",
+      "fullName": "Nom complet",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "agreeTerms": "J'accepte les",
+      "termsOfService": "Conditions de Service",
+      "and": "et",
+      "privacyPolicy": "Politique de Confidentialité",
+      "createAccount": "Créer un compte",
+      "orContinueWith": "Ou continuez avec",
+      "signUpWithGoogle": "S'inscrire avec Google"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Unifiez Vos Communications Client",
+      "subtitle": "Rationalisez vos interactions client sur tous les canaux avec des insights alimentés par l'IA et des intégrations transparentes.",
+      "cta": {
+        "primary": "Commencer Gratuitement",
+        "secondary": "En Savoir Plus"
+      }
+    },
+    "features": {
+      "title": "Tout Ce Dont Vous Avez Besoin Pour Réussir",
+      "subtitle": "Des outils puissants pour gérer les prospects, automatiser les conversations et développer votre entreprise.",
+      "leadManagement": {
+        "title": "Gestion des Prospects",
+        "description": "Suivez et cultivez les prospects à travers votre entonnoir de vente avec une automatisation intelligente."
+      },
+      "omnichannel": {
+        "title": "Support Omnicanal",
+        "description": "Connectez WhatsApp, Instagram, Facebook, Telegram et plus dans une plateforme unifiée."
+      },
+      "aiPowered": {
+        "title": "Insights Alimentés par l'IA",
+        "description": "Exploitez l'intelligence artificielle pour comprendre le comportement client et optimiser les conversations."
+      },
+      "analytics": {
+        "title": "Analyses Avancées",
+        "description": "Obtenez des insights détaillés sur vos performances de vente et métriques d'engagement client."
+      }
+    },
+    "integrations": {
+      "title": "Connectez Tous Vos Canaux",
+      "subtitle": "Intégrez parfaitement avec les plateformes que vos clients utilisent le plus."
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Entreprise ?",
+      "subtitle": "Rejoignez des milliers d'entreprises utilisant déjà notre plateforme pour développer leurs relations client.",
+      "button": "Commencer Votre Essai Gratuit"
+    }
+  },
   "customers": {
     "title": "Clients",
     "subtitle": "Gérez vos relations clients et suivez les interactions"

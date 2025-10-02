@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { NavItem, UserProfile } from '@/types/navigation';
-import { navigationItems, bottomNavItems } from '@/data/navigation';
+import { navigationItems, bottomNavItems } from '@/data/loggedNavigation';
 import { getIcon } from '../icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

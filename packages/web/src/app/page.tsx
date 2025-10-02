@@ -1,12 +1,20 @@
+'use client';
+
+import PublicLayout from '@/components/publicNavigation/PublicLayout';
+import HeroSection from '@/components/home/HeroSection';
+import FeaturesSection from '@/components/home/FeaturesSection';
+import IntegrationsSection from '@/components/home/IntegrationsSection';
+import CTASection from '@/components/home/CTASection';
+
 export default function Home() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-600 mt-2">
-          Welcome to your Omnichannel customer management platform
-        </p>
+    <PublicLayout>
+      <div className="min-h-screen">
+        <HeroSection />
+        <FeaturesSection />
+        <IntegrationsSection />
+        <CTASection />
       </div>
-    </div>
+    </PublicLayout>
   );
 }

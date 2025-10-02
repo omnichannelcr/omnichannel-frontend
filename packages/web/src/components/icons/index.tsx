@@ -30,7 +30,8 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaFacebook,
-  FaTelegram
+  FaTelegram,
+  FaBrain
 } from 'react-icons/fa';
 import { 
   HiGlobe
@@ -41,124 +42,191 @@ interface IconProps {
   size?: number;
 }
 
+
 export const GridIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdDashboard size={size || 20} />
+  <div className={className}>
+    <MdDashboard size={size || 20} />
+  </div>
 );
 
 export const UsersIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdPeople size={size || 20} />
+  <div className={className}>
+    <MdPeople size={size || 20} />
+  </div>
 );
 
 export const BadgeIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdVerified size={size || 20} />
+  <div className={className}>
+    <MdVerified size={size || 20} />
+  </div>
 );
 
 export const FileTextIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdDescription size={size || 20} />
+  <div className={className}>
+    <MdDescription size={size || 20} />
+  </div>
 );
 
 export const GiftIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdCardGiftcard size={size || 20} />
+  <div className={className}>
+    <MdCardGiftcard size={size || 20} />
+  </div>
 );
 
 export const FolderIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdFolder size={size || 20} />
+  <div className={className}>
+    <MdFolder size={size || 20} />
+  </div>
 );
 
 export const WalletIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdAccountBalanceWallet size={size || 20} />
+  <div className={className}>
+    <MdAccountBalanceWallet size={size || 20} />
+  </div>
 );
 
 export const BarChartIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdBarChart size={size || 20} />
+  <div className={className}>
+    <MdBarChart size={size || 20} />
+  </div>
 );
 
 export const BellIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdNotifications size={size || 20} />
+  <div className={className}>
+    <MdNotifications size={size || 20} />
+  </div>
 );
 
 export const SettingsIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdSettings size={size || 20} />
+  <div className={className}>
+    <MdSettings size={size || 20} />
+  </div>
 );
 
 export const LogOutIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdLogout size={size || 20} />
+  <div className={className}>
+    <MdLogout size={size || 20} />
+  </div>
 );
 
 export const MenuIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdMenu size={size || 20} />
+  <div className={className}>
+    <MdMenu size={size || 20} />
+  </div>
 );
 
 export const ChevronUpIcon: React.FC<IconProps> = ({ className = "w-4 h-4", size }) => (
-  <MdKeyboardArrowUp size={size || 16} />
+  <div className={className}>
+    <MdKeyboardArrowUp size={size || 20} />
+  </div>
 );
 
 export const MoreVerticalIcon: React.FC<IconProps> = ({ className = "w-4 h-4", size }) => (
-  <MdMoreVert size={size || 16} />
+  <div className={className}>
+    <MdMoreVert size={size || 20} />
+  </div>
 );
 
 export const HashIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdTag size={size || 20} />
+  <div className={className}>
+    <MdTag size={size || 20} />
+  </div>
 );
 
 export const ChevronLeftIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdChevronLeft size={size || 20} />
+  <div className={className}>
+    <MdChevronLeft size={size || 20} />
+  </div>
 );
 
 export const ChevronRightIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdChevronRight size={size || 20} />
+  <div className={className}>
+    <MdChevronRight size={size || 20} />
+  </div>
 );
 
 export const ChevronDownIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdKeyboardArrowDown size={size || 20} />
+  <div className={className}>
+    <MdKeyboardArrowDown size={size || 20} />
+  </div>
 );
 
 export const SearchIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdSearch size={size || 20} />
+  <div className={className}>
+    <MdSearch size={size || 20} />
+  </div>
 );
 
 export const MessageCircleIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdMessage size={size || 20} />
+  <div className={className}>
+    <MdMessage size={size || 20} />
+  </div>
 );
 
 export const PhoneIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdPhone size={size || 20} />
+  <div className={className}>
+    <MdPhone size={size || 20} />
+  </div>
 );
 
 export const VideoIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdVideocam size={size || 20} />
+  <div className={className}>
+    <MdVideocam size={size || 20} />
+  </div>
 );
 
 export const PaperclipIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdAttachFile size={size || 20} />
+  <div className={className}>
+    <MdAttachFile size={size || 20} />
+  </div>
 );
 
 export const SmileIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdEmojiEmotions size={size || 20} />
+  <div className={className}>
+    <MdEmojiEmotions size={size || 20} />
+  </div>
 );
 
 export const SendIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <MdSend size={size || 20} />
+  <div className={className}>
+    <MdSend size={size || 20} />
+  </div>
 );
 
 export const WhatsappIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <FaWhatsapp size={size || 20} />
+  <div className={className}>
+    <FaWhatsapp size={size || 20} />
+  </div>
 );
 
 export const InstagramIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <FaInstagram size={size || 20} />
+  <div className={className}>
+    <FaInstagram size={size || 20} />
+  </div>
 );
 
 export const FacebookIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <FaFacebook size={size || 20} />
+  <div className={className}>
+    <FaFacebook size={size || 20} />
+  </div>
 );
 
 export const TelegramIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <FaTelegram size={size || 20} />
+  <div className={className}>
+    <FaTelegram size={size || 20} />
+  </div>
 );
 
 export const GlobeIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
-  <HiGlobe size={size || 20} />
+  <div className={className}>
+    <HiGlobe size={size || 20} />
+  </div>
+);
+
+export const BrainIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
+  <div className={className}>
+    <FaBrain size={size || 20} />
+  </div>
 );
 
 // Icon mapping function
@@ -194,9 +262,9 @@ export const getIcon = (iconName: string, className?: string, size?: number) => 
     facebook: FacebookIcon,
     telegram: TelegramIcon,
     globe: GlobeIcon,
+    brain: BrainIcon,
   };
 
   const IconComponent = icons[iconName];
-  return IconComponent ? <IconComponent className={className} size={size} /> : null;
+  return IconComponent ? <IconComponent className={className} size={size || 20} /> : null;
 };
-

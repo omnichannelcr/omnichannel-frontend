@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "Unifica Tus Comunicaciones con Clientes",
+    "subtitle": "Optimiza las interacciones con tus clientes en todos los canales con insights impulsados por IA e integraciones perfectas.",
+    "cta": {
+      "primary": "Comenzar Gratis",
+      "secondary": "Saber Más"
+    }
+  },
+  "features": {
+    "title": "Todo Lo Que Necesitas Para Triunfar",
+    "subtitle": "Herramientas poderosas para gestionar prospectos, automatizar conversaciones y hacer crecer tu negocio.",
+    "leadManagement": {
+      "title": "Gestión de Prospectos",
+      "description": "Rastrea y cultiva prospectos a través de tu embudo de ventas con automatización inteligente."
+    },
+    "omnichannel": {
+      "title": "Soporte Omnicanal",
+      "description": "Conecta WhatsApp, Instagram, Facebook, Telegram y más en una plataforma unificada."
+    },
+    "aiPowered": {
+      "title": "Insights Impulsados por IA",
+      "description": "Aprovecha la inteligencia artificial para entender el comportamiento del cliente y optimizar conversaciones."
+    },
+    "analytics": {
+      "title": "Analíticas Avanzadas",
+      "description": "Obtén insights detallados sobre tu rendimiento de ventas y métricas de engagement con clientes."
+    }
+  },
+  "integrations": {
+    "title": "Conecta Todos Tus Canales",
+    "subtitle": "Integra perfectamente con las plataformas que más usan tus clientes."
+  },
+  "cta": {
+    "title": "¿Listo Para Transformar Tu Negocio?",
+    "subtitle": "Únete a miles de empresas que ya usan nuestra plataforma para hacer crecer sus relaciones con clientes.",
+    "button": "Comenzar Tu Prueba Gratuita"
+  }
+}

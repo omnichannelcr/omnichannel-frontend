@@ -12,6 +12,8 @@ import {
   FaPaperclip,
   FaSmile,
   FaPaperPlane,
+  FaPhone,
+  FaTimes,
   FaChevronLeft,
   FaChevronRight,
   FaChevronUp,
@@ -112,6 +114,18 @@ export const SendIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) =
   </div>
 );
 
+export const PhoneIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
+  <div className={className}>
+    <FaPhone size={size || 20} />
+  </div>
+);
+
+export const CloseIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
+  <div className={className}>
+    <FaTimes size={size || 20} />
+  </div>
+);
+
 export const ChevronLeftIcon: React.FC<IconProps> = ({ className = "w-5 h-5", size }) => (
   <div className={className}>
     <FaChevronLeft size={size || 20} />
@@ -206,6 +220,8 @@ export const getIcon = (iconName: string, className?: string, size?: number) => 
     paperclip: PaperclipIcon,
     smile: SmileIcon,
     send: SendIcon,
+    phone: PhoneIcon,
+    close: CloseIcon,
     'chevron-left': ChevronLeftIcon,
     'chevron-right': ChevronRightIcon,
     'chevron-up': ChevronUpIcon,

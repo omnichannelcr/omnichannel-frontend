@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "Unify Your Customer Communications",
+    "subtitle": "Streamline your customer interactions across all channels with AI-powered insights and seamless integrations.",
+    "cta": {
+      "primary": "Get Started Free",
+      "secondary": "Learn More"
+    }
+  },
+  "features": {
+    "title": "Everything You Need to Succeed",
+    "subtitle": "Powerful tools to manage leads, automate conversations, and grow your business.",
+    "leadManagement": {
+      "title": "Lead Management",
+      "description": "Track and nurture leads through your sales pipeline with intelligent automation."
+    },
+    "omnichannel": {
+      "title": "Omnichannel Support",
+      "description": "Connect WhatsApp, Instagram, Facebook, Telegram and more in one unified platform."
+    },
+    "aiPowered": {
+      "title": "AI-Powered Insights",
+      "description": "Leverage artificial intelligence to understand customer behavior and optimize conversations."
+    },
+    "analytics": {
+      "title": "Advanced Analytics",
+      "description": "Get detailed insights into your sales performance and customer engagement metrics."
+    }
+  },
+  "integrations": {
+    "title": "Connect All Your Channels",
+    "subtitle": "Seamlessly integrate with the platforms your customers use most."
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Join thousands of businesses already using our platform to grow their customer relationships.",
+    "button": "Start Your Free Trial"
+  }
+}

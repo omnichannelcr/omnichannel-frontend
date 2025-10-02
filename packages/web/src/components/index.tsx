@@ -22,10 +22,18 @@ export { ChatList } from './ChatList/ChatList';
 export { DesktopChatView } from './DesktopChatView/DesktopChatView';
 export { MobileChatView } from './MobileChatView/MobileChatView';
 
+// Customer Components
+export { CustomerList } from './CustomerList/CustomerList';
+export { CustomerDetail } from './CustomerDetail/CustomerDetail';
+export { CustomerSearch } from './CustomerSearch/CustomerSearch';
+export { CustomerStats } from './CustomerStats/CustomerStats';
+export { CustomerEditModal } from './CustomerEditModal/CustomerEditModal';
+
 // Other Components
 export { IntegrationCard } from './IntegrationCard/IntegrationCard';
 export { LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { PipelineAnalytics } from './PipelineAnalytics/PipelineAnalytics';
+export { Modal } from './Modal/Modal';
 
 // Icons (re-export)
 export { getIcon } from './icons';

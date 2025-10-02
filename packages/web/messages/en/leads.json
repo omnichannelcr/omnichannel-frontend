@@ -1,0 +1,15 @@
+{
+  "title": "Conversations",
+  "subtitle": "active conversations",
+  "searchPlaceholder": "Search conversations...",
+  "noConversations": "No conversations yet",
+  "selectConversation": "Select a conversation",
+  "selectConversationDescription": "Choose a chat from the list to start messaging",
+  "contactInformation": "Contact Information",
+  "phone": "Phone",
+  "email": "Email",
+  "online": "Online",
+  "lastSeen": "Last seen",
+  "typeMessage": "Type a message...",
+  "send": "Send"
+}

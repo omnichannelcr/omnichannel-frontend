@@ -11,13 +11,13 @@ import {
 } from '@/data/pipeline';
 import { PipelineLead, PipelineStage } from '@/types/pipeline';
 import { getIcon } from '@/components';
+import { generateAvatar, getAvatarBorderClass } from '@/utils/avatars';
 import Link from 'next/link';
 import {
   DndContext,
   DragEndEvent,
   DragOverlay,
   DragStartEvent,
-  DragOverEvent,
   PointerSensor,
   useSensor,
   useSensors,
@@ -161,21 +161,13 @@ const LeadCardContent = ({ lead }: { lead: PipelineLead }) => {
       {/* Lead Header */}
       <div className="flex items-start justify-between mb-2">
         <div className="flex items-center space-x-2">
-          {lead.avatar ? (
-            <Image 
-              src={lead.avatar} 
-              alt={lead.name}
-              width={32}
-              height={32}
-              className="w-8 h-8 rounded-full"
-            />
-          ) : (
-            <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-sm font-medium text-gray-600">
-                {lead.name.charAt(0)}
-              </span>
-            </div>
-          )}
+          <Image
+            src={generateAvatar(lead.name)}
+            alt={lead.name}
+            width={32}
+            height={32}
+            className={`w-8 h-8 rounded-full ${getAvatarBorderClass(lead.name)}`}
+          />
           <div>
             <h4 className="font-medium text-sm text-gray-900">{lead.name}</h4>
             <p className="text-xs text-gray-500">{lead.company}</p>
@@ -221,17 +213,13 @@ const LeadCardContent = ({ lead }: { lead: PipelineLead }) => {
         {/* Assigned Agent */}
         {lead.assignedTo && (
           <div className="flex items-center space-x-2">
-            {lead.assignedTo.avatar ? (
-              <Image 
-                src={lead.assignedTo.avatar} 
-                alt={lead.assignedTo.name}
-                width={16}
-                height={16}
-                className="w-4 h-4 rounded-full"
-              />
-            ) : (
-              <div className="w-4 h-4 bg-gray-300 rounded-full" />
-            )}
+            <Image
+              src={generateAvatar(lead.assignedTo.name)}
+              alt={lead.assignedTo.name}
+              width={16}
+              height={16}
+              className={`w-4 h-4 rounded-full ${getAvatarBorderClass(lead.assignedTo.name)}`}
+            />
             <span className="text-xs text-gray-600">{lead.assignedTo.name}</span>
           </div>
         )}
@@ -358,21 +346,13 @@ const LeadDetailModal = ({
         <div className="space-y-4">
           {/* Basic Info */}
           <div className="flex items-start space-x-4">
-            {lead.avatar ? (
-              <Image 
-                src={lead.avatar} 
-                alt={lead.name}
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full"
-              />
-            ) : (
-              <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-                <span className="text-xl font-medium text-gray-600">
-                  {lead.name.charAt(0)}
-                </span>
-              </div>
-            )}
+            <Image
+              src={generateAvatar(lead.name)}
+              alt={lead.name}
+              width={64}
+              height={64}
+              className={`w-16 h-16 rounded-full ${getAvatarBorderClass(lead.name)}`}
+            />
             
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900">{lead.name}</h3>

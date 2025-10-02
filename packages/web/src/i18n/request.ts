@@ -5,8 +5,19 @@ export default getRequestConfig(async () => {
   const store = await cookies();
   const locale = store.get('locale')?.value || 'es';
 
-  return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
-  };
+  try {
+    // Try to load the new modular structure first
+    const messages = (await import(`../../messages/${locale}/index.ts`)).default;
+    return {
+      locale,
+      messages
+    };
+  } catch {
+    // Fallback to the old single file structure
+    const messages = (await import(`../../messages/${locale}.json`)).default;
+    return {
+      locale,
+      messages
+    };
+  }
 });

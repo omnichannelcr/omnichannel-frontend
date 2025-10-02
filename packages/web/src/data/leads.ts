@@ -1,4 +1,5 @@
 import { Chat, ChatLead, ChatMessage } from '@/types/leads';
+import { generateAvatar } from '@/utils/avatars';
 
 // Mock messages for different chats
 const sampleMessages: ChatMessage[] = [
@@ -179,7 +180,7 @@ export const mockLeads: ChatLead[] = [
   {
     id: '1',
     name: 'Sarah Johnson',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+    avatar: generateAvatar('Sarah Johnson'),
     phone: '+1 (555) 123-4567',
     email: 'sarah.johnson@email.com',
     status: 'active',

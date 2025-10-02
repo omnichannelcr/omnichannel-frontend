@@ -218,5 +218,98 @@
       "conversions": "Conversions",
       "conversionOpportunities": "Opportunités de Conversion"
     }
+  },
+  "customers": {
+    "title": "Clients",
+    "subtitle": "Gérez vos relations clients et communications",
+    "searchPlaceholder": "Rechercher des clients par nom, email, entreprise ou tags...",
+    "addCustomer": "Ajouter Client",
+    "filters": "Filtres",
+    "clearFilters": "Effacer Filtres",
+    "allStatuses": "Tous les Statuts",
+    "allPriorities": "Toutes les Priorités",
+    "allSources": "Toutes les Sources",
+    "noCustomersFound": "Aucun client trouvé",
+    "noCustomersDescription": "Essayez d'ajuster vos critères de recherche ou d'ajouter un nouveau client",
+    "customer": "Client",
+    "company": "Entreprise",
+    "status": "Statut",
+    "priority": "Priorité",
+    "source": "Source",
+    "statusOptions": {
+      "active": "Actif",
+      "prospect": "Prospect",
+      "lead": "Lead",
+      "inactive": "Inactif"
+    },
+    "priorityOptions": {
+      "high": "Élevée",
+      "medium": "Moyenne",
+      "low": "Faible"
+    },
+    "sourceOptions": {
+      "website": "Site Web",
+      "referral": "Référence",
+      "social": "Réseaux Sociaux",
+      "email": "Email",
+      "phone": "Téléphone",
+      "event": "Événement"
+    },
+    "totalValue": "Valeur Totale",
+    "lastContact": "Dernier Contact",
+    "channels": "Canaux",
+    "actions": "Actions",
+    "never": "Jamais",
+    "edit": "Modifier",
+    "basicInformation": "Informations de Base",
+    "email": "Email",
+    "phone": "Téléphone",
+    "timeline": "Chronologie",
+    "created": "Créé",
+    "nextFollowUp": "Prochain Suivi",
+    "notScheduled": "Non programmé",
+    "tags": "Tags",
+    "communicationChannels": "Canaux de Communication",
+    "primary": "Principal",
+    "verified": "Vérifié",
+    "address": "Adresse",
+    "recentNotes": "Notes Récentes",
+    "recentActivities": "Activités Récentes",
+    "addNewCustomer": "Ajouter Nouveau Client",
+    "editCustomer": "Modifier Client",
+    "addCustomerDescription": "Créer un nouveau profil client avec les informations de contact",
+    "editCustomerDescription": "Mettre à jour les informations et préférences du client",
+    "tabs": {
+      "basicInfo": "Info de Base",
+      "contactInfo": "Info de Contact",
+      "additionalDetails": "Détails Supplémentaires"
+    },
+    "name": "Nom",
+    "namePlaceholder": "Entrez le nom du client",
+    "emailPlaceholder": "Entrez l'adresse email",
+    "phonePlaceholder": "Entrez le numéro de téléphone",
+    "companyPlaceholder": "Entrez le nom de l'entreprise",
+    "position": "Position",
+    "positionPlaceholder": "Entrez le titre du poste",
+    "addChannel": "Ajouter Canal",
+    "channelValuePlaceholder": "Entrez les informations de contact",
+    "addTagPlaceholder": "Tapez un tag et appuyez sur Entrée",
+    "cancel": "Annuler",
+    "createCustomer": "Créer Client",
+    "saveChanges": "Sauvegarder",
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Veuillez entrer une adresse email valide",
+      "phoneRequired": "Le numéro de téléphone est requis"
+    },
+    "stats": {
+      "totalCustomers": "Total Clients",
+      "activeCustomers": "Clients Actifs",
+      "prospects": "Prospects",
+      "leads": "Leads",
+      "totalValue": "Valeur Totale",
+      "averageValue": "Valeur Moyenne"
+    }
   }
 }

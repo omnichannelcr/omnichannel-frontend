@@ -1,0 +1,9 @@
+{
+  "dashboard": "Dashboard",
+  "customers": "Customers",
+  "leads": "Leads",
+  "pipeline": "Pipeline",
+  "integrations": "Integrations",
+  "settings": "Settings",
+  "logout": "Logout"
+}

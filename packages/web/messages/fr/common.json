@@ -1,0 +1,37 @@
+{
+  "loading": "Chargement...",
+  "error": "Une erreur s'est produite",
+  "retry": "Réessayer",
+  "save": "Enregistrer",
+  "cancel": "Annuler",
+  "delete": "Supprimer",
+  "edit": "Modifier",
+  "close": "Fermer",
+  "back": "Retour",
+  "next": "Suivant",
+  "previous": "Précédent",
+  "today": "Aujourd'hui",
+  "yesterday": "Hier",
+  "language": "Langue",
+  "status": {
+    "active": "Actif",
+    "pending": "En attente",
+    "follow_up": "Suivi",
+    "closed": "Fermé",
+    "new": "Nouveau",
+    "qualified": "Qualifié",
+    "proposal": "Proposition",
+    "negotiation": "Négociation",
+    "closed_won": "Gagné",
+    "closed_lost": "Perdu"
+  },
+  "sources": {
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "telegram": "Telegram",
+    "website": "Site Web",
+    "email": "E-mail",
+    "phone": "Téléphone"
+  }
+}

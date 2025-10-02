@@ -7,7 +7,7 @@ import { UserProfile } from "@/types/navigation";
 const sampleUser: UserProfile = {
   name: "John Smith",
   email: "jnsmith99@gmail.com",
-  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+  avatar: "https://api.dicebear.com/7.x/initials/svg?seed=John%20Smith"
 };
 
 export default async function DashboardLayout({

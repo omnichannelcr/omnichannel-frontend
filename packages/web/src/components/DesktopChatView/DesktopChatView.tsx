@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Chat } from '@/types/leads';
 import { getIcon } from '@/components';
 import { useTranslations } from 'next-intl';
+import { generateAvatar, getAvatarBorderClass } from '@/utils/avatars';
 
 interface DesktopChatViewProps {
   chat: Chat;
@@ -50,7 +51,7 @@ export function DesktopChatView({ chat }: DesktopChatViewProps) {
       website: 'globe',
     };
     
-    return getIcon(iconMap[source] || 'message-circle', undefined, 16);
+    return getIcon(iconMap[source] || 'message-circle', 'w-5 h-5', 20);
   };
 
   const getSourceColor = (source: string) => {
@@ -92,11 +93,11 @@ export function DesktopChatView({ chat }: DesktopChatViewProps) {
         <div className="flex items-center space-x-3">
           <div className="relative">
             <Image
-              src={chat.lead.avatar}
+              src={generateAvatar(chat.lead.name)}
               alt={chat.lead.name}
               width={40}
               height={40}
-              className="w-10 h-10 rounded-full object-cover"
+              className={`w-10 h-10 rounded-full object-cover ${getAvatarBorderClass(chat.lead.name)}`}
             />
             {/* Online indicator */}
             <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
@@ -109,10 +110,10 @@ export function DesktopChatView({ chat }: DesktopChatViewProps) {
             <div className="flex items-center space-x-2">
               <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getSourceColor(chat.lead.source)}`}>
                 {getSourceIcon(chat.lead.source)}
-                <span className="ml-1">{t(`sources.${chat.lead.source}`)}</span>
+                <span className="ml-1">{t(`common.sources.${chat.lead.source}`)}</span>
               </span>
               <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(chat.lead.status)}`}>
-                {t(`status.${chat.lead.status}`)}
+                {t(`common.status.${chat.lead.status}`)}
               </span>
             </div>
           </div>
@@ -152,11 +153,11 @@ export function DesktopChatView({ chat }: DesktopChatViewProps) {
                   {/* Avatar (only for lead messages) */}
                   {!isUser && (
                     <Image
-                      src={chat.lead.avatar}
+                      src={generateAvatar(chat.lead.name)}
                       alt={chat.lead.name}
                       width={24}
                       height={24}
-                      className="w-6 h-6 rounded-full object-cover flex-shrink-0"
+                      className={`w-6 h-6 rounded-full object-cover flex-shrink-0 ${getAvatarBorderClass(chat.lead.name)}`}
                     />
                   )}
                   

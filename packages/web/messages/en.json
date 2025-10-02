@@ -218,5 +218,98 @@
       "conversions": "Conversions",
       "conversionOpportunities": "Conversion Opportunities"
     }
+  },
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Manage your customer relationships and communications",
+    "searchPlaceholder": "Search customers by name, email, company, or tags...",
+    "addCustomer": "Add Customer",
+    "filters": "Filters",
+    "clearFilters": "Clear Filters",
+    "allStatuses": "All Statuses",
+    "allPriorities": "All Priorities",
+    "allSources": "All Sources",
+    "noCustomersFound": "No customers found",
+    "noCustomersDescription": "Try adjusting your search criteria or add a new customer",
+    "customer": "Customer",
+    "company": "Company",
+    "status": "Status",
+    "priority": "Priority",
+    "source": "Source",
+    "statusOptions": {
+      "active": "Active",
+      "prospect": "Prospect",
+      "lead": "Lead",
+      "inactive": "Inactive"
+    },
+    "priorityOptions": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "sourceOptions": {
+      "website": "Website",
+      "referral": "Referral",
+      "social": "Social Media",
+      "email": "Email",
+      "phone": "Phone",
+      "event": "Event"
+    },
+    "totalValue": "Total Value",
+    "lastContact": "Last Contact",
+    "channels": "Channels",
+    "actions": "Actions",
+    "never": "Never",
+    "edit": "Edit",
+    "basicInformation": "Basic Information",
+    "email": "Email",
+    "phone": "Phone",
+    "timeline": "Timeline",
+    "created": "Created",
+    "nextFollowUp": "Next Follow-up",
+    "notScheduled": "Not scheduled",
+    "tags": "Tags",
+    "communicationChannels": "Communication Channels",
+    "primary": "Primary",
+    "verified": "Verified",
+    "address": "Address",
+    "recentNotes": "Recent Notes",
+    "recentActivities": "Recent Activities",
+    "addNewCustomer": "Add New Customer",
+    "editCustomer": "Edit Customer",
+    "addCustomerDescription": "Create a new customer profile with contact information",
+    "editCustomerDescription": "Update customer information and preferences",
+    "tabs": {
+      "basicInfo": "Basic Info",
+      "contactInfo": "Contact Info",
+      "additionalDetails": "Additional Details"
+    },
+    "name": "Name",
+    "namePlaceholder": "Enter customer name",
+    "emailPlaceholder": "Enter email address",
+    "phonePlaceholder": "Enter phone number",
+    "companyPlaceholder": "Enter company name",
+    "position": "Position",
+    "positionPlaceholder": "Enter job title",
+    "addChannel": "Add Channel",
+    "channelValuePlaceholder": "Enter contact information",
+    "addTagPlaceholder": "Type a tag and press Enter",
+    "cancel": "Cancel",
+    "createCustomer": "Create Customer",
+    "saveChanges": "Save Changes",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneRequired": "Phone number is required"
+    },
+    "stats": {
+      "totalCustomers": "Total Customers",
+      "activeCustomers": "Active Customers",
+      "prospects": "Prospects",
+      "leads": "Leads",
+      "totalValue": "Total Value",
+      "averageValue": "Average Value"
+    }
   }
 }

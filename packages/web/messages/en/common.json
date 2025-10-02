@@ -1,0 +1,37 @@
+{
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "retry": "Retry",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "close": "Close",
+  "back": "Back",
+  "next": "Next",
+  "previous": "Previous",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "language": "Language",
+  "status": {
+    "active": "Active",
+    "pending": "Pending",
+    "follow_up": "Follow Up",
+    "closed": "Closed",
+    "new": "New",
+    "qualified": "Qualified",
+    "proposal": "Proposal",
+    "negotiation": "Negotiation",
+    "closed_won": "Closed Won",
+    "closed_lost": "Closed Lost"
+  },
+  "sources": {
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "telegram": "Telegram",
+    "website": "Website",
+    "email": "Email",
+    "phone": "Phone"
+  }
+}

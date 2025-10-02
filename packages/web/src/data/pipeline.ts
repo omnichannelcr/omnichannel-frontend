@@ -1,4 +1,5 @@
 import { PipelineStage, PipelineLead, PipelineMetrics } from '@/types/pipeline';
+import { generateAvatar } from '@/utils/avatars';
 
 // Mock pipeline leads data
 const mockPipelineLeads: PipelineLead[] = [
@@ -6,7 +7,7 @@ const mockPipelineLeads: PipelineLead[] = [
   {
     id: '1',
     name: 'Sarah Johnson',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+    avatar: generateAvatar('Sarah Johnson'),
     email: 'sarah.johnson@email.com',
     phone: '+1 (555) 123-4567',
     company: 'TechCorp Inc.',

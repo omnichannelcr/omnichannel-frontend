@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { NavItem, UserProfile } from '@/types/navigation';
 import { navigationItems, bottomNavItems } from '@/data/loggedNavigation';
 import { getIcon, LanguageSwitcher } from '@/components';
+import { generateAvatar, getAvatarBorderClass } from '@/utils/avatars';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -153,21 +154,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {isCollapsed ? (
           <div className="flex justify-center">
             <Image
-              src={user.avatar}
+              src={generateAvatar(user.name)}
               alt={user.name}
               width={40}
               height={40}
-              className="w-10 h-10 rounded-full object-cover"
+              className={`w-10 h-10 rounded-full object-cover ${getAvatarBorderClass(user.name)}`}
             />
           </div>
         ) : (
           <div className="flex items-center gap-3">
             <Image
-              src={user.avatar}
+              src={generateAvatar(user.name)}
               alt={user.name}
               width={40}
               height={40}
-              className="w-10 h-10 rounded-full object-cover"
+              className={`w-10 h-10 rounded-full object-cover ${getAvatarBorderClass(user.name)}`}
             />
             <div className="flex-1 min-w-0">
               <p className="font-semibold text-neutral-900 truncate">

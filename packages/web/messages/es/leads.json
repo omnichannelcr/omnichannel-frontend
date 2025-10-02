@@ -1,0 +1,15 @@
+{
+  "title": "Conversaciones",
+  "subtitle": "conversaciones activas",
+  "searchPlaceholder": "Buscar conversaciones...",
+  "noConversations": "Aún no hay conversaciones",
+  "selectConversation": "Selecciona una conversación",
+  "selectConversationDescription": "Elige un chat de la lista para comenzar a enviar mensajes",
+  "contactInformation": "Información de Contacto",
+  "phone": "Teléfono",
+  "email": "Email",
+  "online": "En línea",
+  "lastSeen": "Visto por última vez",
+  "typeMessage": "Escribe un mensaje...",
+  "send": "Enviar"
+}

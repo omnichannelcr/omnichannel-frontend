@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Chat } from '@/types/leads';
 import { getIcon } from '@/components';
 import { useTranslations } from 'next-intl';
+import { generateAvatar, getAvatarBorderClass } from '@/utils/avatars';
 
 interface ChatListProps {
   chats: Chat[];
@@ -35,7 +36,7 @@ export function ChatList({ chats, selectedChat, onSelectChat }: ChatListProps) {
       website: 'globe',
     };
     
-    return getIcon(iconMap[source] || 'message-circle', undefined, 16);
+    return getIcon(iconMap[source] || 'message-circle', 'w-5 h-5', 20);
   };
 
   const getSourceColor = (source: string) => {
@@ -107,11 +108,11 @@ export function ChatList({ chats, selectedChat, onSelectChat }: ChatListProps) {
                     {/* Avatar */}
                     <div className="relative">
                       <Image
-                        src={chat.lead.avatar}
+                        src={generateAvatar(chat.lead.name)}
                         alt={chat.lead.name}
                         width={48}
                         height={48}
-                        className="w-12 h-12 rounded-full object-cover"
+                        className={`w-12 h-12 rounded-full object-cover ${getAvatarBorderClass(chat.lead.name)}`}
                       />
                       {/* Source indicator */}
                       <div className={`absolute -bottom-1 -right-1 ${getSourceColor(chat.lead.source)}`}>

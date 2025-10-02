@@ -1,0 +1,9 @@
+{
+  "dashboard": "Panel de Control",
+  "customers": "Clientes",
+  "leads": "Prospectos",
+  "pipeline": "Embudo",
+  "integrations": "Integraciones",
+  "settings": "Configuración",
+  "logout": "Cerrar Sesión"
+}

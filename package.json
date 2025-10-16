@@ -1,37 +1,36 @@
 {
-  "name": "omnichannel",
+  "name": "omnichannel-ui",
   "version": "1.0.0",
-  "description": "Omnichannel application with backend and frontend",
+  "description": "Omnichannel communication platform frontend",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=@omnichannel/backend\" \"npm run dev --workspace=web\"",
-    "build": "npm run build --workspace=@omnichannel/backend && npm run build --workspace=web",
-    "start": "concurrently \"npm run start --workspace=@omnichannel/backend\" \"npm run start --workspace=web\"",
-    "lint": "npm run lint --workspace=@omnichannel/backend && npm run lint --workspace=web",
-    "docker:build": "docker-compose build",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:logs": "docker-compose logs -f",
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
-    "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
-    "docker:clean": "docker-compose down -v && docker system prune -f",
-    "db:migrate": "npm run db:migrate --workspace=@omnichannel/backend",
-    "db:seed": "npm run db:seed --workspace=@omnichannel/backend",
-    "db:reset": "npm run db:reset --workspace=@omnichannel/backend",
-    "db:install": "node scripts/db.js install",
-    "db:start": "node scripts/db.js start",
-    "db:stop": "node scripts/db.js stop",
-    "db:restart": "node scripts/db.js restart",
-    "db:status": "node scripts/db.js status",
-    "db:logs": "node scripts/db.js logs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "next-intl": "^4.3.9",
+    "postcss": "^8.5.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
